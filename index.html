@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #chat-box {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+        }
+        #message-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        #message-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #message-input button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-box"></div>
+    <div id="message-input">
+        <input type="text" id="message" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
